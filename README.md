@@ -1,1 +1,1 @@
-# sso-protos
+# SSO Service proto files & .pb

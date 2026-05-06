@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/waves2k/sso-service/auth/v1; auth";
+
+service Auth {
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse);
+}
+
+message RegisterRequest {
+    string email = 1 [json_name = "email"];
+    string password =2 [json_name = "password"] ;
+}
+
+message RegisterResponse {
+    string user_id = 1 [json_name = "user_id"];
+}
+
+message LoginRequest{
+    string email = 1 [json_name = "email"] ;
+    string password = 2 [json_name = "password"];
+    int32 app_id = 3 [json_name = "app_id"] ;
+}
+
+message LoginResponse{
+    string token = 1 [json_name = "token"] ;
+}
+
+message IsAdminRequest {
+    string user_id = 1 [json_name = "user_id"] ;
+}
+
+message IsAdminResponse {
+  bool is_admin = 1 [json_name = "is_admin"];
+}
