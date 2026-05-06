@@ -8,7 +8,7 @@ PKG_PROTO_PATH = $(CURDIR)/$(GO_GEN_PATH)
 PACKAGE_NAME = github.com/waves2k/sso-service
 
 # Путь до protobuf файлов
-PROTOBUFF_PATH = $(CURDIR)/proto/*.proto
+PROTOBUFF_PATH = $(CURDIR)/proto/sso/*.proto
 
 .PHONY: all
 
